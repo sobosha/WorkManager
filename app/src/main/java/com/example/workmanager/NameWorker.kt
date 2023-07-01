@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 
-class NameWorkManager(
+class NameWorker(
     private val context: Context,
     private val workerParameters: WorkerParameters
 ) : CoroutineWorker(context, workerParameters) {
@@ -17,5 +17,9 @@ class NameWorkManager(
         } catch (e: Exception) {
             Result.failure()
         }
+    }
+
+    companion object{
+        const val TAG = "com.example.workmanager.NameWorkManager"
     }
 }
